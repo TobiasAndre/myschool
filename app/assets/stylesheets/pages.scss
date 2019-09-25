@@ -1,0 +1,41 @@
+.home{
+  margin-top: 1%;
+  .home-icon{
+    color: #344955;
+    font-size: 20px;
+  }
+}
+.add-btn{
+  margin-bottom: 40px;
+}
+.subscriber-list-card table th {
+    font-size: .9rem; 
+    font-weight: 800;
+    text-transform: uppercase;
+}
+.subscriber-list-card table td:first-child,
+.subscriber-list-card table th:first-child {
+    padding: 15px 5px 15px 25px;
+}
+.subscriber-list-card table td:last-child,
+.subscriber-list-card table th:last-child {
+    padding: 15px 25px 15px 5px;
+}
+.class_room_items {
+  padding: 3%;
+}
+.group-row {
+  background-color: #00bcd4;
+  color: white;
+  font-size: .9rem; 
+  font-weight: 800;
+}
+.subgroup-row {
+  background-color: black;
+  color: white;
+  font-size: .9rem; 
+  font-weight: 800;
+}
+.class-data {
+  margin-left: 20px;
+}

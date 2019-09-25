@@ -1,0 +1,7 @@
+I"x(function() {
+  $(document).on('turbolinks:load', function() {
+    alert("Provider report");
+  });
+
+}).call(this);
+:ET

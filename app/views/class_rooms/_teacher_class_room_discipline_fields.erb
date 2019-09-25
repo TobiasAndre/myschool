@@ -1,0 +1,18 @@
+<div class="nested-fields">
+  <div class="class_room_items">
+    <div class="row">
+      <div class="input-field col s6">
+        <%= f.select(:discipline_id, options_for_select(@disciplines.collect{ |c| [c.name, c.id] }), {}) %>
+        <%= f.label :discipline_id %>
+      </div>
+      <div class="input-field col s6">
+        <%= f.select(:teacher_id, options_for_select(@teachers.collect{ |c| [c.name, c.id] }), {}) %>
+        <%= f.label :teacher_id %>
+      </div>
+    </div>
+    <%= link_to_remove_association "Remove", f, :class => 'btn btn-danger' %>
+  </div>
+</div>
+<script>
+  $('select').material_select()
+</script>

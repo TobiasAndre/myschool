@@ -1,0 +1,44 @@
+<div class="card subscriber-list-card animate fadeRight">
+  <div class="card-content pb-1">
+    <h4 class="card-title mb-0">Class Rooms</h4>
+  </div>
+  <table class="subscription-table responsive-table highlight">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Students</th>
+        <th>Teachers</th>
+        <th>Disciplines</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @class_rooms.each do |class_room| %>
+      <tr>
+        <td><%= class_room.id %></td>
+        <td><%= class_room.name %></td>
+        <td><%= class_room.students.size %></td>
+        <td><%= class_room.teachers.size %></td>
+        <td><%= class_room.disciplines.size %></td>
+        <td class="left-align">
+          <%= link_to class_room_path(class_room), method: :get do %>
+            <i class="material-icons">create</i>
+          <% end %>
+          <%= link_to class_room_path(class_room), method: :delete do %>
+            <i class="material-icons pink-text">clear</i>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class="fixed-action-btn add-btn">
+  <%= link_to new_class_room_path do %>
+    <button class="btn-floating btn-large red pulse" type="submit">
+      <i class="large material-icons">add</i>
+    </button>
+  <% end %>
+</div>

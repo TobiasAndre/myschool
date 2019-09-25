@@ -1,0 +1,8 @@
+I"š(function() {
+  $(document).on('turbolinks:load', function() {
+    $(".dropdown-trigger").dropdown();
+    $("select").formSelect();
+  });
+
+}).call(this);
+:ET

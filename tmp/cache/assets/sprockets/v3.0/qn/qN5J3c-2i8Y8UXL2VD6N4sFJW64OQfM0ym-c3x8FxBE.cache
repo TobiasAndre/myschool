@@ -1,0 +1,8 @@
+I"¡(function() {
+  $(document).on('turbolinks:load', function() {
+    $('.button-collapse').sideNav();
+    $(".dropdown-trigger").dropdown();
+  });
+
+}).call(this);
+:ET

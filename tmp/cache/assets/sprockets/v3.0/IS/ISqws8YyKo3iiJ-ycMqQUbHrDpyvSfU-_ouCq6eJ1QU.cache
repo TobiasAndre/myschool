@@ -1,0 +1,7 @@
+I"(function() {
+  $(document).on('turbolinks:load', function() {
+    $('.button-collapse').sideNav();
+  });
+
+}).call(this);
+:ET

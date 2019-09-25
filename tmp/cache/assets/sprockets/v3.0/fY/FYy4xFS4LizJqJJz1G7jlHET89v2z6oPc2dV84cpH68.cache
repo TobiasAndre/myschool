@@ -1,0 +1,5 @@
+I"H(function() {
+  $(".dropdown-trigger").dropdown();
+
+}).call(this);
+:ET

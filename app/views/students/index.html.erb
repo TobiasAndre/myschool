@@ -1,0 +1,38 @@
+<div class="card subscriber-list-card animate fadeRight">
+  <div class="card-content pb-1">
+    <h4 class="card-title mb-0">Students</h4>
+  </div>
+  <table class="subscription-table responsive-table highlight">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @students.each do |student| %>
+      <tr>  
+        <td><%= student.id %></td>
+        <td><%= student.name %></td>
+        <td class="left-align">
+          <%= link_to student_path(student), method: :get do %>
+            <i class="material-icons">create</i>
+          <% end %>
+          <%= link_to student_path(student), method: :delete do %>
+            <i class="material-icons pink-text">clear</i>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class="fixed-action-btn add-btn">
+  <%= link_to new_student_path do %>
+    <button class="btn-floating btn-large red pulse" type="submit">
+      <i class="large material-icons">add</i>
+    </button>
+  <% end %>
+</div>

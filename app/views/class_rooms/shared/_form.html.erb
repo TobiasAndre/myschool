@@ -1,0 +1,37 @@
+<div class="col s12 m6 l6">
+  <div id="prefixes" class="card card card-default scrollspy">
+    <div class="card-content">
+      <h4 class="card-title">Class Room</h4>
+      <div class="col s12">
+        <%= form_for @class_room do |f| %>
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">featured_play_list</i>
+              <%= f.label :name %>
+              <%= f.text_field :name, :required => true %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <% f.fields_for :teacher_class_room_disciplines do |item| %>
+                <%= render partial: "teacher_class_room_discipline_fields", locals: { f: item } %>
+              <% end %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <%= link_to_add_association "Add Discipline ", f, :teacher_class_room_disciplines, :class => 'btn btn-primary', :id => 'add' %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <button class="btn cyan waves-effect waves-light right" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+              </button>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

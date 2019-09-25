@@ -1,0 +1,7 @@
+I"ˆ(function() {
+  $(document).on('turbolinks:load', function() {
+    $('.fixed-action-btn').floatingActionButton();
+  });
+
+}).call(this);
+:ET

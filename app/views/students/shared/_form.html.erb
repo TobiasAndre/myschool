@@ -1,0 +1,29 @@
+<div class="col s12 m6 l6">
+  <div id="prefixes" class="card card card-default scrollspy">
+    <div class="card-content">
+      <h4 class="card-title">Student</h4>
+      <div class="col s12">
+        <%= form_for @student do |f| %>
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">account_circle</i>
+              <%= f.label :name %>
+              <%= f.text_field :name, :required => true %>
+            </div>
+            <div class="input-field col s6">
+              <%= f.select(:class_room_id, options_for_select(@class_rooms.collect{ |c| [c.name, c.id] }), {}) %>
+              <%= f.label :class_room_id %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <button class="btn cyan waves-effect waves-light right" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+              </button>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

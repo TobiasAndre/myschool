@@ -1,0 +1,43 @@
+<div class="navbar-fixed">
+  <nav class="top-nav">
+    <div class="nav-wrapper col s12">
+      <a href="/" class="brand-logo">
+        <%= image_tag("logo.png", class: "logo-img") %>
+        <span class="logo-title">
+          My School
+        </span>
+      </a>
+      
+      <a href="#" data-activates="side-bar" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <% if current_user %>
+          <li><a href="/">Home</a></li>
+          <li><%= link_to('Teachers', teachers_path, :method => :get) %></li>
+          <li><%= link_to('Disciplines', disciplines_path, :method => :get) %></li>
+          <li><%= link_to('ClassRooms', class_rooms_path, :method => :get) %></li>
+          <li><%= link_to('Students', students_path, :method => :get) %></li>
+          <li><%= link_to('Reports', provider_reports_path, :method => :get) %></li>
+          <li><a href="/users/edit">Profile</a></li>
+          <li>  <%= link_to('Exit', destroy_user_session_path, :method => :delete) %></li>
+        <% else %>
+          <li><a href="/users/sign_in">Sign In</a></li>
+          <li><a href="/users/sign_up">Sign Up</a></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<ul class="side-nav" id="side-bar"> 
+  <% if current_user %>
+    <li><a href="/home">Home</a></li>
+    <li><a href="/users/edit">Profile</a></li>
+    <li><div class="divider"></div></li>
+    <li><%= link_to('Exit', destroy_user_session_path, :method => :delete) %></li>
+  <% else %>
+    <li><a href="/users/sign_in">Sign In</a></li>
+    <li><div class="divider"></div></li>
+    <li><a href="/users/sign_up">Sign Up</a></li>
+    <li><div class="divider"></div></li>
+  <% end %>
+</ul>

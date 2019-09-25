@@ -1,0 +1,9 @@
+I"’(function() {
+  $(document).on('turbolinks:load', function() {
+    $('#example').DataTable({
+      responsive: true
+    });
+  });
+
+}).call(this);
+:ET
